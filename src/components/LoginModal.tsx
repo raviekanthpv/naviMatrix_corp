@@ -37,7 +37,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-slate-900 mb-2">
-            {isLogin ? 'Welcome Back' : 'Join AeroTech'}
+            {isLogin ? 'Welcome Back' : 'Join NaviMatriX'}
           </h2>
           <p className="text-gray-600">
             {isLogin ? 'Access your drone management portal' : 'Create your account'}
