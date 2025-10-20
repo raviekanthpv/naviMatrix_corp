@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Rocket,
-  Zap,
   Radar,
   Cpu,
   Crosshair,
   Gauge,
-  Layers,
   AirVent,
 } from "lucide-react";
+import falcon from "../Assets/falcon.jpg";
 
 export default function FalconProductIntro() {
   return (
@@ -50,11 +49,9 @@ export default function FalconProductIntro() {
       className="relative flex justify-center"
     >
       <img
-        src="src\Assets\falcon.JPG"
+        src={falcon}
         alt="Falcon Drone"
-        height={`10px`}
-        width={`10px`}
-        className=""
+        className="rounded-2xl w-full w-[460px] object-cover shadow-[0_0_80px_rgba(56,189,248,0.25)]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
     </motion.div>
@@ -68,9 +65,9 @@ export default function FalconProductIntro() {
       className="flex flex-col md:flex-row items-center gap-12"
     >
       <img
-        src="src\Assets\falcon.JPG"
+        src={falcon}
         alt="Falcon Interceptor"
-        className="w-full md:w-1/2 rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)]"
+        className="w-full w-[450px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)]"
       />
       <div className="md:w-1/2 space-y-5">
         <h3 className="text-4xl font-bold text-sky-400">Falcon Interceptor</h3>
