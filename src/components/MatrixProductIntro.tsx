@@ -35,7 +35,7 @@ export default function MatrixProductIntro() {
             <img
               src={matrixOSsuit}
               alt="Matrix OS Suite"
-              className="rounded-2xl shadow-[0_0_60px_rgba(56,189,248,0.15)] w-full w-[100px] object-cover border border-gray-400 rounded-lg "
+              className="rounded-2xl shadow-[0_0_60px_rgba(56,189,248,0.15)] w-full w-[460px] object-cover border border-gray-400 rounded-lg "
             />
           </div>
         </motion.div>
@@ -49,7 +49,7 @@ export default function MatrixProductIntro() {
           <img
             src={matrixSA}
             alt="MAMATRIX SA"
-            className="w-full w-[90px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
+            className="w-full w-[450px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
           />
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">MATRIX SA</h3>
@@ -73,7 +73,7 @@ export default function MatrixProductIntro() {
           <img
             src={naaviAI}
             alt="Matrix NAAV.AI"
-            className="w-full w-[90px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
+            className="w-full w-[450px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
           />
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">Matrix NAAV.AI</h3>
