@@ -51,7 +51,7 @@ export default function FalconProductIntro() {
       <img
         src={falcon}
         alt="Falcon Drone"
-        className="rounded-2xl w-full w-[460px] object-cover shadow-[0_0_80px_rgba(56,189,248,0.25)]"
+        className="rounded-2xl w-[330px] sm:w-[380px] md:w-[420px] lg:w-[460px] xl:w-[480px]  max-w-full mx-auto object-cover shadow-[0_0_80px_rgba(56,189,248,0.25)]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
     </motion.div>
@@ -67,7 +67,7 @@ export default function FalconProductIntro() {
       <img
         src={falcon}
         alt="Falcon Interceptor"
-        className="w-full w-[450px] rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)]"
+        className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[450px] max-w-full mx-auto rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)]"
       />
       <div className="md:w-1/2 space-y-5">
         <h3 className="text-4xl font-bold text-sky-400">Falcon Interceptor</h3>

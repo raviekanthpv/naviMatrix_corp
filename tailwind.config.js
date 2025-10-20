@@ -2,8 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: [
-    "w-[450px]",
-    "w-[460px]",
+    {
+      pattern: /(w|h|p|m)-\[.*\]/ 
+    }
   ],
   theme: {
     extend: {
