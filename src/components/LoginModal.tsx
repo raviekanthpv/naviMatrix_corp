@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Eye, EyeOff } from 'lucide-react';
+import React, { useState } from "react";
+import { X, Eye, EyeOff } from "lucide-react";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -10,16 +10,16 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
-    organization: ''
+    email: "",
+    password: "",
+    confirmPassword: "",
+    organization: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login/register logic here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     onClose();
   };
 
@@ -37,10 +37,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-slate-900 mb-2">
-            {isLogin ? 'Welcome Back' : 'Join NaviMatriX'}
+            {isLogin ? "Welcome Back" : "Join NaviMatriX"}
           </h2>
           <p className="text-gray-600">
-            {isLogin ? 'Access your drone management portal' : 'Create your account'}
+            {isLogin
+              ? "Access your drone management portal"
+              : "Create your account"}
           </p>
         </div>
 
@@ -54,7 +56,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               required
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
               value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
           </div>
 
@@ -68,7 +72,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
                 value={formData.organization}
-                onChange={(e) => setFormData({...formData, organization: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, organization: e.target.value })
+                }
               />
             </div>
           )}
@@ -83,14 +89,20 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors pr-12"
                 value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
               >
-                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                {showPassword ? (
+                  <EyeOff className="h-5 w-5" />
+                ) : (
+                  <Eye className="h-5 w-5" />
+                )}
               </button>
             </div>
           </div>
@@ -105,7 +117,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors"
                 value={formData.confirmPassword}
-                onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, confirmPassword: e.target.value })
+                }
               />
             </div>
           )}
@@ -114,7 +128,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
             type="submit"
             className="w-full bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-lg font-medium transition-colors"
           >
-            {isLogin ? 'Sign In' : 'Create Account'}
+            {isLogin ? "Sign In" : "Create Account"}
           </button>
         </form>
 
@@ -123,7 +137,9 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
             onClick={() => setIsLogin(!isLogin)}
             className="text-sky-500 hover:text-sky-600 font-medium"
           >
-            {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
+            {isLogin
+              ? "Don't have an account? Sign up"
+              : "Already have an account? Sign in"}
           </button>
         </div>
       </div>

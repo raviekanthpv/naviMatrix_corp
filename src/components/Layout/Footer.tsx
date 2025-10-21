@@ -13,8 +13,8 @@ export default function Footer() {
               <span className="text-xl font-bold tracking-wide">Naavi</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Leading the future of autonomous flight with military-grade precision 
-              and commercial reliability.
+              Leading the future of autonomous flight with military-grade
+              precision and commercial reliability.
             </p>
           </div>
 
@@ -22,10 +22,26 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Products</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Military Systems</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Industrial Solutions</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Survey & Mapping</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Custom Development</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Military Systems
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Industrial Solutions
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Survey & Mapping
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Custom Development
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -33,10 +49,29 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Company</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">News</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li>
+                <a href="#about" className="hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  News
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -44,10 +79,26 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4 text-white">Support</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Training</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Support Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Emergency</a></li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Training
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Support Center
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Emergency
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -55,11 +106,18 @@ export default function Footer() {
         {/* Divider & Bottom Text */}
         <div className="border-t border-slate-800 mt-10 pt-8 text-center text-gray-400 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} <span className="font-semibold text-white">Naavi</span>. All rights reserved.
+            &copy; {new Date().getFullYear()}{" "}
+            <span className="font-semibold text-white">Naavi</span>. All rights
+            reserved.
           </p>
           <p className="mt-2">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a> |{" "}
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Service
+            </a>
           </p>
         </div>
       </div>

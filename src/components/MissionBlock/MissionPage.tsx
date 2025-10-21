@@ -8,9 +8,12 @@ export default function MissionPage() {
   return (
     <div className="w-full min-h-screen bg-black text-white overflow-x-hidden">
       {/* --- MISSION --- */}
-      <section className="h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-b from-black via-black to-carbon-black">
+      <section
+        className="h-screen flex flex-col justify-center items-center px-6 
+      bg-gradient-to-b from-black via-black to-carbon-black blockBreakerBottomBorder"
+      >
         <div className="max-w-4xl space-y-12 text-center">
-          {/* ✅ Unified heading style */}
+          {/* Unified heading style */}
           <div>
             <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight text-white">
               Mission
@@ -59,7 +62,7 @@ export default function MissionPage() {
       {/* --- OUR TEAM --- */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 bg-carbon-black text-white">
         <div className="max-w-6xl text-center space-y-12">
-          {/* ✅ Same heading style */}
+          {/* Same heading style */}
           <div>
             <h2 className="text-6xl md:text-7xl font-extrabold tracking-tight text-white">
               Our Team
@@ -80,7 +83,7 @@ export default function MissionPage() {
             {[
               { name: "Dr. Arjun Naavi", role: "Founder & CEO" },
               { name: "Asha Menon", role: "Chief AI Officer" },
-              { name: "Rahul Dev", role: "Head of Autonomous Systems" }
+              { name: "Rahul Dev", role: "Head of Autonomous Systems" },
             ].map((member, index) => (
               <div
                 key={index}
@@ -88,9 +91,11 @@ export default function MissionPage() {
                            rounded-2xl p-8 transition-all duration-300 
                            hover:-translate-y-2 shadow-lg hover:shadow-white/10"
               >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full border border-white/20 
+                <div
+                  className="w-20 h-20 mx-auto mb-6 rounded-full border border-white/20 
                                 flex items-center justify-center text-3xl font-bold text-white/80 
-                                group-hover:text-white group-hover:border-white transition-all">
+                                group-hover:text-white group-hover:border-white transition-all"
+                >
                   {member.name.charAt(0)}
                 </div>
                 <h3 className="text-xl font-semibold mb-1">{member.name}</h3>

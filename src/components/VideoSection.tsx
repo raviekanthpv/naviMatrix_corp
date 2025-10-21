@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useEffect, useRef } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface VideoSectionProps {
   videoUrl?: string;
@@ -8,11 +8,11 @@ interface VideoSectionProps {
   showScrollIndicator?: boolean;
 }
 
-export default function VideoSection({ 
+export default function VideoSection({
   videoUrl = "https://videos.pexels.com/video-files/3843433/3843433-uhd_2560_1440_30fps.mp4",
-  title, 
-  subtitle, 
-  showScrollIndicator = true 
+  title,
+  subtitle,
+  showScrollIndicator = true,
 }: VideoSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -34,7 +34,7 @@ export default function VideoSection({
         playsInline
       />
       <div className="absolute inset-0 bg-black/40" />
-      
+
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           {title}
@@ -42,7 +42,7 @@ export default function VideoSection({
         <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
           {subtitle}
         </p>
-        
+
         {showScrollIndicator && (
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <ChevronDown className="h-8 w-8 text-white" />

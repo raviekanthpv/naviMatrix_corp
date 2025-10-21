@@ -9,18 +9,6 @@ export default function AboutPage() {
       background: "Entrepreneur | Defense & Aerospace",
       image: "https://media.licdn.com/dms/image/v2/D5603AQEa4e3PdTdeSw/profile-displayphoto-shrink_200_200/B56ZUxl0RWHoAY-/0/1740293753047?e=1761782400&v=beta&t=aW0CXq10wl05WvSiaJmqUgbyTWH45V1JlAgDn5QV1ZY"
     },
-    // {
-    //   name: "Mark Rodriguez",
-    //   position: "CTO & Co-Founder",
-    //   background: "Ex-SpaceX engineer specializing in flight control systems",
-    //   image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
-    // },
-    // {
-    //   name: "Emily Watson",
-    //   position: "VP of Engineering",
-    //   background: "Former Boeing lead engineer with 12+ years in aerospace",
-    //   image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400"
-    // }
   ];
 
   const milestones = [

@@ -113,9 +113,21 @@ export default function Navbar() {
     apps: {
       layout: "smallLayout",
       items: [
-        { title: "Docs", icon: <FileText className="h-5 w-5" />, path: "/docs" },
-        { title: "Support", icon: <LifeBuoy className="h-5 w-5" />, path: "/support" },
-        { title: "Settings", icon: <Settings className="h-5 w-5" />, path: "/settings" },
+        {
+          title: "Docs",
+          icon: <FileText className="h-5 w-5" />,
+          path: "/docs",
+        },
+        {
+          title: "Support",
+          icon: <LifeBuoy className="h-5 w-5" />,
+          path: "/support",
+        },
+        {
+          title: "Settings",
+          icon: <Settings className="h-5 w-5" />,
+          path: "/settings",
+        },
         { title: "Info", icon: <Info className="h-5 w-5" />, path: "/info" },
       ],
     },
@@ -204,7 +216,10 @@ export default function Navbar() {
           : "bg-black/90"
       } text-white border-b border-white/30`}
     >
-      <div ref={barRef} className="relative z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        ref={barRef}
+        className="relative z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="hidden md:flex items-center justify-between w-full relative py-4">
           {/* LEFT: Brand */}
           <div className="flex items-center space-x-6 flex-1 justify-start">
@@ -225,7 +240,9 @@ export default function Navbar() {
                 <div key={item.name} className="relative">
                   <button
                     onClick={() =>
-                      setActiveMenu(activeMenu === item.hasSub ? null : item.hasSub || null)
+                      setActiveMenu(
+                        activeMenu === item.hasSub ? null : item.hasSub || null
+                      )
                     }
                     className={`flex items-center gap-1 font-medium transition-all ${
                       activeMenu === item.hasSub
@@ -237,7 +254,9 @@ export default function Navbar() {
                     {item.hasSub && (
                       <ArrowRight
                         className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                          activeMenu === item.hasSub ? "rotate-90 text-sky-400" : ""
+                          activeMenu === item.hasSub
+                            ? "rotate-90 text-sky-400"
+                            : ""
                         }`}
                       />
                     )}
@@ -245,7 +264,10 @@ export default function Navbar() {
                   {item.hasSub &&
                     activeMenu === item.hasSub &&
                     subMenus[item.hasSub] && (
-                      <SubMenu name={item.hasSub} config={subMenus[item.hasSub]} />
+                      <SubMenu
+                        name={item.hasSub}
+                        config={subMenus[item.hasSub]}
+                      />
                     )}
                 </div>
               ))}

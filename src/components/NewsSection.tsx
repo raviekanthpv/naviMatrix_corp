@@ -7,19 +7,22 @@ export default function NewsSection() {
       title: "Naavi launches Matrix.OS v3.0",
       desc: "Our next-gen autonomous operating system enhances drone coordination with AI-driven decision layers.",
       date: "October 18 2025",
-      image: "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1600",
+      image:
+        "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1600",
     },
     {
       title: "FALCON Series sets new record",
       desc: "The Falcon X drone achieved a 48-hour continuous surveillance flight — redefining endurance.",
       date: "October 12 2025",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1600",
+      image:
+        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1600",
     },
     {
       title: "Naavi AI Lab partners with DRDO",
       desc: "Collaborating on cutting-edge autonomous defense systems focused on situational awareness.",
       date: "October 9 2025",
-      image: "https://images.unsplash.com/photo-1533154683836-84ea7a0f3b12?q=80&w=1600",
+      image:
+        "https://images.unsplash.com/photo-1533154683836-84ea7a0f3b12?q=80&w=1600",
     },
   ];
 
@@ -40,7 +43,8 @@ export default function NewsSection() {
             Latest <span className="text-sky-400">News</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Updates, innovations, and milestones shaping Naavi’s journey toward the future of autonomy.
+            Updates, innovations, and milestones shaping Naavi’s journey toward
+            the future of autonomy.
           </p>
         </motion.div>
 
@@ -66,7 +70,9 @@ export default function NewsSection() {
                 <h3 className="text-xl font-semibold group-hover:text-sky-400 transition">
                   {item.title}
                 </h3>
-                <p className="text-sm text-white/80 mt-2 line-clamp-3">{item.desc}</p>
+                <p className="text-sm text-white/80 mt-2 line-clamp-3">
+                  {item.desc}
+                </p>
                 <div className="mt-4 text-sm flex items-center text-sky-400 group-hover:translate-x-1 transition-transform">
                   Read More <ArrowRight className="h-4 w-4 ml-1" />
                 </div>

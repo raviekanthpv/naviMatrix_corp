@@ -5,7 +5,6 @@ import matrixSA from "../Assets/matrixSA.png";
 import matrixOSsuit from "../Assets/matrixOS.png";
 import naaviAI from "../Assets/naavi-ai.png";
 
-
 export default function MatrixProductIntro() {
   const navigate = useNavigate();
 
@@ -15,7 +14,6 @@ export default function MatrixProductIntro() {
       className="relative w-full bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-hidden blockBreakerBottomBorder"
     >
       <div className="max-w-7xl mx-auto px-6 py-24 space-y-32">
-        
         {/* === MATRIX OS SUITE === */}
         <motion.div
           onClick={() => navigate("/matrix-os")}
@@ -26,9 +24,11 @@ export default function MatrixProductIntro() {
             Matri<span className="text-sky-400">X OS Suite</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            MatriX OS SUIT is the intelligent autonomous core of Naavi Aerospace—a unified operating system designed to 
-            seamlessly connect and manage assets across air, land, and sea domains. By integrating real-time mission data, 
-            it empowers autonomous decision-making, orchestrates coordinated operations, and ensures flawless command 
+            MatriX OS SUIT is the intelligent autonomous core of Naavi
+            Aerospace—a unified operating system designed to seamlessly connect
+            and manage assets across air, land, and sea domains. By integrating
+            real-time mission data, it empowers autonomous decision-making,
+            orchestrates coordinated operations, and ensures flawless command
             integration, delivering enhanced operational efficiency .
           </p>
           <div className="mt-8 flex justify-center">
@@ -54,12 +54,16 @@ export default function MatrixProductIntro() {
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">MATRIX SA</h3>
             <p className="text-lg text-gray-300">
-              This delivers a revolutionary layer of situational awareness, acting as the intelligent "senses" for any integrated system. 
-              Much like human perception, it employs advanced High-Level Sensor Fusion to create a comprehensive, multi-dimensional 
-              picture of the operational environment. The system intelligently processes a cohesive blend of constant, real-time data 
-              streams with a deep reserve of historical information. This complete understanding empowers the core AI to execute critical, 
-              autonomous, split-second decisions, providing unparalleled battlefield clarity and a decisive tactical edge when it matters most.
-
+              This delivers a revolutionary layer of situational awareness,
+              acting as the intelligent "senses" for any integrated system. Much
+              like human perception, it employs advanced High-Level Sensor
+              Fusion to create a comprehensive, multi-dimensional picture of the
+              operational environment. The system intelligently processes a
+              cohesive blend of constant, real-time data streams with a deep
+              reserve of historical information. This complete understanding
+              empowers the core AI to execute critical, autonomous, split-second
+              decisions, providing unparalleled battlefield clarity and a
+              decisive tactical edge when it matters most.
             </p>
           </div>
         </motion.div>
@@ -78,14 +82,19 @@ export default function MatrixProductIntro() {
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">Matrix NAAV.AI</h3>
             <p className="text-lg text-gray-300">
-              Naav.ai is the intelligent, AI-native operating system that functions as the central brain for a 
-              unified autonomous force. It is designed to be installed across all assets, creating a single, 
-              seamless network that coordinates disparate systems—from surveillance drones and radars to counter-UAS 
-              platforms and ground vehicles. This shared consciousness allows Naav.ai to make critical, split-second 
-              tactical decisions, autonomously identifying an incoming threat detected by one asset and instantly 
-              dispatching the optimal counter-measure from another. Beyond high-level coordination, Naav.ai also acts 
-              as the individual AI pilot, enabling any unmanned vehicle to navigate complex, unknown environments and 
-              execute entire missions with full autonomy, all while keeping the human operator in ultimate control.
+              Naav.ai is the intelligent, AI-native operating system that
+              functions as the central brain for a unified autonomous force. It
+              is designed to be installed across all assets, creating a single,
+              seamless network that coordinates disparate systems—from
+              surveillance drones and radars to counter-UAS platforms and ground
+              vehicles. This shared consciousness allows Naav.ai to make
+              critical, split-second tactical decisions, autonomously
+              identifying an incoming threat detected by one asset and instantly
+              dispatching the optimal counter-measure from another. Beyond
+              high-level coordination, Naav.ai also acts as the individual AI
+              pilot, enabling any unmanned vehicle to navigate complex, unknown
+              environments and execute entire missions with full autonomy, all
+              while keeping the human operator in ultimate control.
             </p>
           </div>
         </motion.div>
