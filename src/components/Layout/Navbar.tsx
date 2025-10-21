@@ -30,6 +30,7 @@ type SubMenuConfig = {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [openSub, setOpenSub] = useState<string | null>(null);
   const barRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
@@ -326,6 +327,114 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {/* === MOBILE NAVBAR === */}
+      <div className="md:hidden px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          to="/"
+          className="flex items-center space-x-2"
+          onClick={() => {
+            setActiveMenu(null);
+            setOpenSub(null);
+          }}
+        >
+          <Plane className="h-7 w-7 text-white" />
+          <span className="text-xl font-bold">Naavi</span>
+        </Link>
+
+        {/* Hamburger button */}
+        <button
+          onClick={() =>
+            setActiveMenu(activeMenu === "mobile" ? null : "mobile")
+          }
+          className="p-2 rounded-md hover:bg-white/10 transition"
+        >
+          {activeMenu === "mobile" ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* === MOBILE DROPDOWN === */}
+      {activeMenu === "mobile" && (
+        <div className="md:hidden flex flex-col bg-black/95 border-t border-white/10 py-4 px-6 space-y-3">
+          {[
+            ...navItems,
+            { name: "Company", hasSub: "company" },
+            { name: "Apps", hasSub: "apps" },
+          ].map((item) => (
+            <div key={item.name} className="flex flex-col">
+              {/* Parent button */}
+              <button
+                onClick={() =>
+                  setOpenSub(openSub === item.name ? null : item.name)
+                }
+                className="flex justify-between items-center py-2 text-white/90 hover:text-sky-400"
+              >
+                <span>{item.name}</span>
+                {item.hasSub && (
+                  <ArrowRight
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      openSub === item.name ? "rotate-90 text-sky-400" : ""
+                    }`}
+                  />
+                )}
+              </button>
+
+              {/* Submenu items */}
+              {item.hasSub &&
+                subMenus[item.hasSub] &&
+                openSub === item.name && (
+                  <div className="pl-4 border-l border-white/10 flex flex-col space-y-2 mt-1">
+                    {subMenus[item.hasSub].items.map((sub) => (
+                      <button
+                        key={sub.title}
+                        onClick={() => {
+                          if (sub.path) navigate(sub.path);
+                          else if (sub.href) handleSmoothScroll(sub.href);
+                          setActiveMenu(null);
+                          setOpenSub(null);
+                        }}
+                        className="text-left text-white/70 hover:text-sky-400 text-sm py-1 flex items-center gap-2"
+                      >
+                        {sub.icon}
+                        {sub.title}
+                      </button>
+                    ))}
+                  </div>
+                )}
+            </div>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
