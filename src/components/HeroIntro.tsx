@@ -22,7 +22,7 @@ export default function HeroIntro() {
         viewport={{ once: true }}
         className="relative z-10 px-6 text-center max-w-5xl"
       >
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
           Next-Gen Autonomy Platform
         </h1>
         <motion.p
@@ -51,7 +51,7 @@ export default function HeroIntro() {
         </p>
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          transition={{ duration: 1, repeat: Infinity }}
         >
           <ChevronDown className="w-8 h-8 text-sky-400" />
         </motion.div>

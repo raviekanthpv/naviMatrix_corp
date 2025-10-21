@@ -3,6 +3,7 @@ import MissionBlock from './MissionBlock';
 import HeroIntro from './HeroIntro';
 import MatrixProductIntro from './MatrixProductIntro';
 import FalconProductIntro from './FalconProductIntro';
+import NewsSection from './NewsSection';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HeroIntro />
       <MatrixProductIntro />
       <FalconProductIntro />
+      <NewsSection />
     </div>
   );
 }

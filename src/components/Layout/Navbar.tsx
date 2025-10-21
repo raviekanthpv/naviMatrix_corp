@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Plane,
-  Rocket,
   Wind,
   ArrowRight,
   Grid,
@@ -13,7 +12,6 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import falcon from "../../Assets/falcon.jpg";
 import matrixOSsuit from "../../Assets/matrixOS.png";
-
 
 type LayoutType = "bigLayout" | "smallLayout";
 type SubItem = {
@@ -32,9 +30,7 @@ type SubMenuConfig = {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [navHeight, setNavHeight] = useState(64);
   const barRef = useRef<HTMLDivElement | null>(null);
-  const rowRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
 
   /** Sticky Navbar + Auto Close on Scroll **/
@@ -47,43 +43,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /** Dynamic Navbar Height **/
-  useEffect(() => {
-    const measure = () => setNavHeight(barRef.current?.offsetHeight ?? 64);
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
-  /** Outside click closes submenu **/
-  useEffect(() => {
-    const closeOnOutside = (e: MouseEvent) => {
-      if (!barRef.current?.contains(e.target as Node)) {
-        requestAnimationFrame(() => setActiveMenu(null));
-      }
-    };
-    document.addEventListener("click", closeOnOutside);
-    return () => document.removeEventListener("click", closeOnOutside);
-  }, []);
-
   /** Smooth scroll or navigate **/
   const handleSmoothScroll = (hash: string) => {
     const el = document.querySelector(hash);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleNavigation = (link: string) => {
-    if (link.startsWith("#")) handleSmoothScroll(link);
-    else navigate(link);
-    setActiveMenu(null);
-  };
-
   /** NAV ITEMS **/
   const navItems = [
-    { name: "Matrix", link: "/matrix", hasSub: "matrix" },
+    { name: "Matrix. - autonomy", link: "/matrix", hasSub: "matrix" },
+    { name: "CUAS", link: "/cuas", hasSub: "cuas" },
     { name: "Air Crafts", link: "#aircrafts", hasSub: "aircrafts" },
-    { name: "Power", link: "#power" },
-    { name: "Company", link: "/company", hasSub: "company" },
   ];
 
   /** SUBMENUS **/
@@ -92,25 +62,36 @@ export default function Navbar() {
       layout: "bigLayout",
       items: [
         {
-          title: "Matrix OS",
-          desc: "A unified operating system for autonomous systems.",
-          image:
-            matrixOSsuit,
+          title: "SA",
+          desc: "SA delivers a revolutionary layer of situational awareness, acting as the intelligent 'senses' for any integrated system.",
+          image: matrixOSsuit,
           icon: <Grid className="h-5 w-5" />,
-          path: "/matrix/os",
-        }
+          path: "/matrix/sa",
+        },
+        {
+          title: "NAAV.AI",
+          desc: "Naav.ai is the intelligent, AI-native operating system that functions as the central brain for a unified autonomous force.",
+          image: matrixOSsuit,
+          icon: <Grid className="h-5 w-5" />,
+          path: "/matrix/naav-ai",
+        },
+      ],
+    },
+    cuas: {
+      layout: "bigLayout",
+      items: [
+        {
+          title: "FALCON SERIES",
+          desc: "A unified operating system for autonomous systems.",
+          image: falcon,
+          icon: <Grid className="h-5 w-5" />,
+          path: "/cuas/falcon",
+        },
       ],
     },
     aircrafts: {
       layout: "bigLayout",
       items: [
-        {
-          title: "Falcon",
-          desc: "Falcon is a high-speed interceptor designed to detect, track, and intercept hostile or unauthorized aerial targets — from rogue drones to small high-speed intruders.",
-          image: falcon,
-          icon: <Rocket className="h-5 w-5" />,
-          href: "#fixed-wing",
-        },
         {
           title: "Drishti",
           desc: "Drishti is the ultimate 'eye in the sky,' an advanced autonomous surveillance drone that grants unparalleled vision and awareness.",
@@ -139,90 +120,81 @@ export default function Navbar() {
       ],
     },
   };
-/** Submenu Renderer **/
-const SubMenu = ({ config }: { name: string; config: SubMenuConfig }) => {
-  const { layout, items } = config;
 
-  // === BIG LAYOUT (full width across screen) ===
-  if (layout === "bigLayout") {
-  return (
-    <div
-      className="fixed left-0 right-0 z-[45] mt-0 animate-slideDown overflow-hidden"
-      style={{ top: navHeight }}
-    >
-      {/* full width background */}
-      <div className="w-screen bg-gradient-to-b from-black/90 via-black/95 to-black backdrop-blur-xl border-t border-white/10 shadow-[0_40px_120px_-20px_rgba(255,255,255,0.25)]">
-        {/* inner row now spans full width */}
-        {/* full width background */}
-<div className="w-screen bg-gradient-to-b from-black/90 via-black/95 to-black backdrop-blur-xl border-t border-white/30 shadow-[0_40px_120px_-20px_rgba(255,255,255,0.25)]">
-  {/* inner row now spans full width */}
-  <div
-    ref={rowRef}
-    className="w-full px-[5vw] py-14 flex justify-center gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden border-y border-white/20"
-    style={{ minHeight: "520px" }}
-  >
-    {items.map((s) => (
-      <button
-        key={s.title}
-        onClick={() => {
-          if (s.path) navigate(s.path);
-          else if (s.href) handleSmoothScroll(s.href);
-          setActiveMenu(null);
-        }}
-        className="group relative overflow-hidden rounded-3xl ring-1 ring-white/20 hover:ring-white/60 transition shrink-0 w-[500px] h-[480px] border border-white/15 hover:border-white/40"
-      >
-        <div className="relative w-full h-full">
-          <div
-            className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-            style={{ backgroundImage: `url(${s.image})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/90" />
-          <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
-            <div className="flex items-center gap-2 text-white/90 group-hover:text-white transition">
-              {s.icon}
-              <span className="text-lg font-semibold">{s.title}</span>
-            </div>
-            <p className="mt-2 text-[15px] leading-snug text-white/80 text-justify">{s.desc}</p>
-            <div className="mt-4 text-sm text-white/90 group-hover:text-white flex items-center">
-              Explore
-              <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+  /** Submenu Renderer **/
+  const SubMenu = ({ config }: { name: string; config: SubMenuConfig }) => {
+    const { layout, items } = config;
+
+    // === BIG LAYOUT ===
+    if (layout === "bigLayout") {
+      return (
+        <div className="fixed left-0 right-0 z-[45] mt-0 animate-slideDown overflow-hidden top-[64px]">
+          <div className="w-screen bg-gradient-to-b from-black/90 via-black/95 to-black backdrop-blur-xl border-t border-white/10 shadow-[0_40px_120px_-20px_rgba(255,255,255,0.25)]">
+            <div
+              className="w-full px-[5vw] py-14 flex justify-center gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory border-y border-white/20"
+              style={{ minHeight: "520px" }}
+            >
+              {items.map((s) => (
+                <button
+                  key={s.title}
+                  onClick={() => {
+                    if (s.path) navigate(s.path);
+                    else if (s.href) handleSmoothScroll(s.href);
+                    setActiveMenu(null);
+                  }}
+                  className="group relative overflow-hidden rounded-3xl ring-1 ring-white/20 hover:ring-white/60 transition shrink-0 w-[500px] h-[480px] border border-white/15 hover:border-white/40"
+                >
+                  <div className="relative w-full h-full">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                      style={{ backgroundImage: `url(${s.image})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/90" />
+                    <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
+                      <div className="flex items-center gap-2 text-white/90 group-hover:text-white transition">
+                        {s.icon}
+                        <span className="text-lg font-semibold">{s.title}</span>
+                      </div>
+                      <p className="mt-2 text-[15px] leading-snug text-white/80 text-justify">
+                        {s.desc}
+                      </p>
+                      <div className="mt-4 text-sm text-white/90 group-hover:text-white flex items-center">
+                        Explore
+                        <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>
-      </button>
-    ))}
-  </div>
-</div>
+      );
+    }
 
+    // === SMALL LAYOUT (Centered) ===
+    return (
+      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[45] w-56 rounded-xl bg-black/95 border border-white/15 backdrop-blur-md shadow-lg py-3 flex flex-col text-sm animate-slideDown">
+        {items.map((link) => (
+          <Link
+            key={link.title}
+            to={link.path ?? "#"}
+            onClick={(e) => {
+              if (link.href) {
+                e.preventDefault();
+                handleSmoothScroll(link.href);
+              }
+              setActiveMenu(null);
+            }}
+            className="px-5 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+          >
+            {link.icon && <span>{link.icon}</span>}
+            {link.title}
+          </Link>
+        ))}
       </div>
-    </div>
-  );
-}
-
-
-  // === SMALL LAYOUT (centered dropdown) ===
-  return (
-    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[45] w-56 rounded-xl bg-black/95 border border-white/15 backdrop-blur-md shadow-lg py-3 flex flex-col text-sm animate-slideDown">
-      {items.map((link) => (
-        <Link
-          key={link.title}
-          to={link.path ?? "#"}
-          onClick={(e) => {
-            if (link.href) {
-              e.preventDefault();
-              handleSmoothScroll(link.href);
-            }
-            setActiveMenu(null);
-          }}
-          className="px-5 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
-        >
-          {link.icon && <span>{link.icon}</span>}
-          {link.title}
-        </Link>
-      ))}
-    </div>
-  );
-};
+    );
+  };
 
   return (
     <nav
@@ -235,7 +207,7 @@ const SubMenu = ({ config }: { name: string; config: SubMenuConfig }) => {
       <div ref={barRef} className="relative z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="hidden md:flex items-center justify-between w-full relative py-4">
           {/* LEFT: Brand */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-6 flex-1 justify-start">
             <Link
               to="/"
               className="flex items-center space-x-2 group hover:scale-[1.02] transition"
@@ -244,60 +216,91 @@ const SubMenu = ({ config }: { name: string; config: SubMenuConfig }) => {
               <Plane className="h-8 w-8 text-white" />
               <span className="text-2xl font-bold tracking-wide">Naavi</span>
             </Link>
-            <div className="h-6 w-px bg-white/30" />
           </div>
 
-          {/* CENTER: Nav Items */}
-          <div className="pl-3 flex items-center space-x-8">
-            {navItems.map((item) => (
-              <div key={item.name} className="relative">
-                <button
-                  onClick={() =>
-                    setActiveMenu(activeMenu === item.hasSub ? null : item.hasSub || null)
-                  }
-                  className={`flex items-center gap-1 font-medium transition-all ${
-                    activeMenu === item.hasSub
-                      ? "text-sky-400 border-b-2 border-sky-400 pb-1"
-                      : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                  {item.hasSub && (
-                    <ArrowRight
-                      className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                        activeMenu === item.hasSub ? "rotate-90 text-sky-400" : ""
-                      }`}
-                    />
-                  )}
-                </button>
-                {item.hasSub &&
-                  activeMenu === item.hasSub &&
-                  subMenus[item.hasSub] && (
-                    <SubMenu name={item.hasSub} config={subMenus[item.hasSub]} />
-                  )}
-              </div>
-            ))}
+          {/* CENTER: Widened Menu */}
+          <div className="flex-[2] flex justify-center">
+            <div className="flex items-center space-x-12">
+              {navItems.map((item) => (
+                <div key={item.name} className="relative">
+                  <button
+                    onClick={() =>
+                      setActiveMenu(activeMenu === item.hasSub ? null : item.hasSub || null)
+                    }
+                    className={`flex items-center gap-1 font-medium transition-all ${
+                      activeMenu === item.hasSub
+                        ? "text-sky-400 border-b-2 border-sky-400 pb-1"
+                        : "text-white/80 hover:text-white"
+                    }`}
+                  >
+                    {item.name}
+                    {item.hasSub && (
+                      <ArrowRight
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                          activeMenu === item.hasSub ? "rotate-90 text-sky-400" : ""
+                        }`}
+                      />
+                    )}
+                  </button>
+                  {item.hasSub &&
+                    activeMenu === item.hasSub &&
+                    subMenus[item.hasSub] && (
+                      <SubMenu name={item.hasSub} config={subMenus[item.hasSub]} />
+                    )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* RIGHT: Apps */}
-          <div className="relative ml-auto pl-8">
-            <button
-              onClick={() => setActiveMenu(activeMenu === "apps" ? null : "apps")}
-              className={`p-2 rounded-full transition flex items-center gap-2 ${
-                activeMenu === "apps"
-                  ? "bg-white/10 ring-1 ring-sky-400 text-white"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              <Grid className="h-6 w-6" />
-              <span className="hidden lg:inline text-sm font-medium">Apps</span>
-              <ArrowRight
-                className={`h-4 w-4 transform transition-transform duration-200 ${
-                  activeMenu === "apps" ? "rotate-90 text-sky-400" : ""
+          {/* RIGHT: Company + Apps */}
+          <div className="flex-1 flex items-center justify-end space-x-8">
+            {/* Company */}
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setActiveMenu(activeMenu === "company" ? null : "company")
+                }
+                className={`flex items-center gap-1 font-medium transition-all ${
+                  activeMenu === "company"
+                    ? "text-sky-400 border-b-2 border-sky-400 pb-1"
+                    : "text-white/80 hover:text-white"
                 }`}
-              />
-            </button>
-            {activeMenu === "apps" && <SubMenu name="apps" config={subMenus.apps} />}
+              >
+                Company
+                <ArrowRight
+                  className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                    activeMenu === "company" ? "rotate-90 text-sky-400" : ""
+                  }`}
+                />
+              </button>
+              {activeMenu === "company" && (
+                <SubMenu name="company" config={subMenus.company} />
+              )}
+            </div>
+
+            {/* Apps */}
+            <div className="relative">
+              <button
+                onClick={() =>
+                  setActiveMenu(activeMenu === "apps" ? null : "apps")
+                }
+                className={`p-2 rounded-full transition flex items-center gap-2 ${
+                  activeMenu === "apps"
+                    ? "bg-white/10 ring-1 ring-sky-400 text-white"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                <Grid className="h-6 w-6" />
+                <ArrowRight
+                  className={`h-4 w-4 transform transition-transform duration-200 ${
+                    activeMenu === "apps" ? "rotate-90 text-sky-400" : ""
+                  }`}
+                />
+              </button>
+              {activeMenu === "apps" && (
+                <SubMenu name="apps" config={subMenus.apps} />
+              )}
+            </div>
           </div>
         </div>
       </div>
