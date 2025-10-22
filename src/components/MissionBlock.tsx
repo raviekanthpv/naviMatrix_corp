@@ -1,9 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MissionBlock() {
-  const navigate = useNavigate();
-
   return (
     <section
       id="mission-block"
@@ -44,15 +42,16 @@ export default function MissionBlock() {
         </p>
 
         <div className="mt-10">
-          <button
+          <Link
+            to="/mission"
             className="group inline-flex items-center gap-2 px-8 py-3 
-              rounded-full bg-white hover:bg-gray-200 text-black 
-              font-semibold text-lg transition-all duration-300 shadow-lg"
-            onClick={() => navigate("/mission")}
+              rounded-full text-white hover:scale-110
+              font-semibold text-2xl transition-all duration-300 shadow-lg"
           >
             Learn More About Our Mission
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+          </Link>
+
           <p className="mt-3 text-gray-400 text-sm md:text-base">
             Includes <span className="text-gray-200 font-medium">Mission</span>{" "}
             and <span className="text-gray-200 font-medium">Team</span>{" "}

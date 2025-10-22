@@ -48,11 +48,11 @@ export default function FalconProductIntro() {
       viewport={{ once: true }}
       className="relative flex justify-center"
     >
-      <img
+      {/* <img
         src={falcon}
         alt="Falcon Drone"
         className="rounded-2xl w-[330px] sm:w-[380px] md:w-[420px] lg:w-[460px] xl:w-[480px]  max-w-full mx-auto object-cover shadow-[0_0_80px_rgba(56,189,248,0.25)]"
-      />
+      /> */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl" />
     </motion.div>
 
@@ -72,20 +72,19 @@ export default function FalconProductIntro() {
       <div className="md:w-1/2 space-y-5">
         <h3 className="text-4xl font-bold text-sky-400">Falcon Interceptor</h3>
         <p className="text-gray-300 leading-relaxed">
-          Compact, stealth-optimized, and fully autonomous — the Falcon Interceptor
-          neutralizes airborne intrusions with precision.
-          Using multi-sensor fusion (radar, optical, and infrared), it reacts and
-          eliminates threats within seconds.
+          Falcon is a high-speed interceptor drone for decisive aerial defense.
         </p>
-        <p className="text-gray-400">
-          Networked via the <span className="text-white font-semibold">MatriX Defense Grid</span>,
-          it operates in coordinated missions across aerial, naval, and land-based platforms.
+        <p className="text-gray-300 leading-relaxed">
+Using external radar and an onboard optical camera, it rapidly detects, tracks, and eliminates hostile or unauthorized aerial targets—like rogue drones—within seconds.
+        </p>
+        <p className="text-gray-300 leading-relaxed">
+ Engineered for agility and precision, Falcon ensures every threat is met with speed and accuracyaccurac
         </p>
       </div>
     </motion.div>
 
     {/* === FEATURE GRID === */}
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -109,10 +108,10 @@ export default function FalconProductIntro() {
           <p className="text-sm text-gray-400">{desc}</p>
         </div>
       ))}
-    </motion.div>
+    </motion.div> */}
 
     {/* === CTA === */}
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
@@ -129,7 +128,7 @@ export default function FalconProductIntro() {
       <p className="text-gray-400 mt-3 text-sm">
         Dive deeper into Falcon’s architecture, payloads & control systems.
       </p>
-    </motion.div>
+    </motion.div> */}
   </div>
 </section>
 

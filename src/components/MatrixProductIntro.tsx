@@ -16,29 +16,34 @@ export default function MatrixProductIntro() {
       <div className="max-w-7xl mx-auto px-6 py-24 space-y-32">
         {/* === MATRIX OS SUITE === */}
         <motion.div
-          onClick={() => navigate("/matrix-os")}
-          whileHover={{ scale: 1.02 }}
-          className="cursor-pointer text-center max-w-4xl mx-auto transition-transform"
-        >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-            Matri<span className="text-sky-400">X OS Suite</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            MatriX OS SUIT is the intelligent autonomous core of Naavi
-            Aerospace—a unified operating system designed to seamlessly connect
-            and manage assets across air, land, and sea domains. By integrating
-            real-time mission data, it empowers autonomous decision-making,
-            orchestrates coordinated operations, and ensures flawless command
-            integration, delivering enhanced operational efficiency .
-          </p>
-          <div className="mt-8 flex justify-center">
-            <img
-              src={matrixOSsuit}
-              alt="Matrix OS Suite"
-              className="rounded-2xl shadow-[0_0_60px_rgba(56,189,248,0.15)] w-[330px] sm:w-[380px] md:w-[420px] lg:w-[460px] xl:w-[480px]  max-w-full mx-auto object-cover border border-gray-400 rounded-lg "
-            />
-          </div>
-        </motion.div>
+  onClick={() => navigate("/matrix-os")}
+  whileHover={{ scale: 1.02 }}
+  className="cursor-pointer flex flex-col md:flex-row items-start gap-12"
+>
+  <div className="md:w-1/2 text-left space-y-4">
+    <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+      Matri<span className="text-sky-400">X OS Suite</span>
+    </h2>
+    <br />
+    <p className="text-lg mb-5 md:text-xl text-gray-300 leading-relaxed">
+      MatriX OS SUIT is the unified operating system that acts as the intelligent autonomous core for all Naavi Aerospace assets.
+    </p>
+    <p className="text-lg mb-5 md:text-xl text-gray-300 leading-relaxed">
+      It seamlessly connects and manages assets across air, land, and sea.
+    </p>
+    <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+      By integrating real-time mission data, MatriX OS enables autonomous decision-making and ensures flawless command integration for enhanced operational efficiency.
+    </p>
+  </div>
+  <div className="mt-0 flex justify-center md:mt-2">
+    <img
+      src={matrixOSsuit}
+      alt="Matrix OS Suite"
+      className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[450px] max-w-full mx-auto rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
+    />
+  </div>
+</motion.div>
+
 
         {/* === MAMATRIX SA === */}
         <motion.div
@@ -46,24 +51,18 @@ export default function MatrixProductIntro() {
           whileHover={{ scale: 1.02 }}
           className="cursor-pointer flex flex-col md:flex-row items-center gap-12"
         >
-          <img
+          {/* <img
             src={matrixSA}
             alt="MAMATRIX SA"
             className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[450px] max-w-full mx-auto rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
-          />
+          /> */}
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">MATRIX SA</h3>
             <p className="text-lg text-gray-300">
-              This delivers a revolutionary layer of situational awareness,
-              acting as the intelligent "senses" for any integrated system. Much
-              like human perception, it employs advanced High-Level Sensor
-              Fusion to create a comprehensive, multi-dimensional picture of the
-              operational environment. The system intelligently processes a
-              cohesive blend of constant, real-time data streams with a deep
-              reserve of historical information. This complete understanding
-              empowers the core AI to execute critical, autonomous, split-second
-              decisions, providing unparalleled battlefield clarity and a
-              decisive tactical edge when it matters most.
+              Matrix SA provides advanced situational awareness, acting as intelligent "senses" for any system.
+            </p>
+            <p className="text-lg text-gray-300">
+It uses high-level sensor fusion, blending real-time and historical data, to empower AI for critical, autonomous decisions. Matrix SA delivers mission clarity and a decisive tactical edge.
             </p>
           </div>
         </motion.div>
@@ -74,28 +73,21 @@ export default function MatrixProductIntro() {
           whileHover={{ scale: 1.02 }}
           className="cursor-pointer flex flex-col md:flex-row-reverse items-center gap-12"
         >
-          <img
+          {/* <img
             src={naaviAI}
             alt="Matrix NAAV.AI"
             className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[450px] max-w-full mx-auto rounded-2xl shadow-[0_0_50px_rgba(56,189,248,0.15)] border border-gray-400 rounded-lg"
-          />
+          /> */}
           <div className="md:w-1/2 text-left space-y-4">
             <h3 className="text-4xl font-bold text-sky-400">Matrix NAAV.AI</h3>
             <p className="text-lg text-gray-300">
-              Naav.ai is the intelligent, AI-native operating system that
-              functions as the central brain for a unified autonomous force. It
-              is designed to be installed across all assets, creating a single,
-              seamless network that coordinates disparate systems—from
-              surveillance drones and radars to counter-UAS platforms and ground
-              vehicles. This shared consciousness allows Naav.ai to make
-              critical, split-second tactical decisions, autonomously
-              identifying an incoming threat detected by one asset and instantly
-              dispatching the optimal counter-measure from another. Beyond
-              high-level coordination, Naav.ai also acts as the individual AI
-              pilot, enabling any unmanned vehicle to navigate complex, unknown
-              environments and execute entire missions with full autonomy, all
-              while keeping the human operator in ultimate control.
+              <b>Matrix NAAV.AI</b> is the <b>AI-native central brain</b> for your autonomous force.
             </p>
+            <p className="text-lg text-gray-300">
+              It unifies all assets (drones, vehicles, etc.) into a <b>"shared consciousness,"</b>
+              enabling <b>split-second</b> decisions by autonomously assigning threats. NAAV.AI also functions as an <b>AI pilot</b>, executing entire missions autonomously while keeping a human in <b>ultimate control</b>.
+            </p>
+
           </div>
         </motion.div>
 

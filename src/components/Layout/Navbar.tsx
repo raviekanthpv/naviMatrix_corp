@@ -230,11 +230,11 @@ export default function Navbar() {
               onClick={() => setActiveMenu(null)}
             >
               <Plane className="h-8 w-8 text-white" />
-              <span className="text-2xl font-bold tracking-wide">Naavi</span>
+              <span className="text-3xl font-bold tracking-wide">Naavi</span>
             </Link>
           </div>
 
-          {/* CENTER: Widened Menu */}
+          {/* CENTER: Menu */}
           <div className="flex-[2] flex justify-center">
             <div className="flex items-center space-x-12">
               {navItems.map((item) => (
@@ -245,9 +245,9 @@ export default function Navbar() {
                         activeMenu === item.hasSub ? null : item.hasSub || null
                       )
                     }
-                    className={`flex items-center gap-1 font-medium transition-all ${
+                    className={`flex text-2xl items-center gap-1 font-medium transition-all duration-200 ${
                       activeMenu === item.hasSub
-                        ? "text-sky-400 border-b-2 border-sky-400 pb-1"
+                        ? "text-white scale-110 font-bold"
                         : "text-white/80 hover:text-white"
                     }`}
                   >
@@ -256,7 +256,7 @@ export default function Navbar() {
                       <ArrowRight
                         className={`h-3.5 w-3.5 transition-transform duration-200 ${
                           activeMenu === item.hasSub
-                            ? "rotate-90 text-sky-400"
+                            ? "rotate-90 "
                             : ""
                         }`}
                       />
@@ -283,16 +283,16 @@ export default function Navbar() {
                 onClick={() =>
                   setActiveMenu(activeMenu === "company" ? null : "company")
                 }
-                className={`flex items-center gap-1 font-medium transition-all ${
+                className={`flex text-2xl items-center gap-1 font-medium transition-all duration-200 ${
                   activeMenu === "company"
-                    ? "text-sky-400 border-b-2 border-sky-400 pb-1"
+                    ? "text-white scale-110 font-bold"
                     : "text-white/80 hover:text-white"
                 }`}
               >
                 Company
                 <ArrowRight
                   className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                    activeMenu === "company" ? "rotate-90 text-sky-400" : ""
+                    activeMenu === "company" ? "rotate-90" : ""
                   }`}
                 />
               </button>
@@ -307,9 +307,9 @@ export default function Navbar() {
                 onClick={() =>
                   setActiveMenu(activeMenu === "apps" ? null : "apps")
                 }
-                className={`p-2 rounded-full transition flex items-center gap-2 ${
+                className={`p-2 text-2xl rounded-full transition flex items-center gap-2 ${
                   activeMenu === "apps"
-                    ? "bg-white/10 ring-1 ring-sky-400 text-white"
+                    ? "bg-white/10 ring-1 scale-110 text-white"
                     : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
