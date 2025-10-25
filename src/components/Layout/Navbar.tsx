@@ -86,7 +86,7 @@ export default function Navbar() {
           desc: "A unified operating system for autonomous systems.",
           image: falcon,
           icon: <Grid className="h-5 w-5" />,
-          path: "/cuas/falcon",
+          path: "/falcon",
         },
       ],
     },
