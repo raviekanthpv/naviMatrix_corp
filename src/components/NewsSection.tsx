@@ -29,7 +29,7 @@ export default function NewsSection() {
   return (
     <section
       id="news"
-      className="relative w-full bg-gradient-to-b from-black via-gray-900 to-black text-white py-24"
+      className="relative w-full py-24"
     >
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         <motion.div
@@ -40,9 +40,9 @@ export default function NewsSection() {
           className="text-center"
         >
           <h2 className="text-5xl md:text-6xl font-extrabold mb-4">
-            Latest <span className="text-sky-400">News</span>
+            Latest <span className="text-red-600">News</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto">
             Updates, innovations, and milestones shaping Naavi’s journey toward
             the future of autonomy.
           </p>
@@ -73,7 +73,7 @@ export default function NewsSection() {
                 <p className="text-sm text-white/80 mt-2 line-clamp-3">
                   {item.desc}
                 </p>
-                <div className="mt-4 text-sm flex items-center text-sky-400 group-hover:translate-x-1 transition-transform">
+                <div className="mt-4 text-sm flex items-center text-red-400 group-hover:translate-x-1 transition-transform">
                   Read More <ArrowRight className="h-4 w-4 ml-1" />
                 </div>
               </div>

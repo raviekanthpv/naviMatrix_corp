@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface VideoSectionProps {
@@ -36,16 +36,16 @@ export default function VideoSection({
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold text-text-light mb-6 leading-tight">
           {title}
         </h1>
-        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-text-light/70 max-w-3xl mx-auto leading-relaxed">
           {subtitle}
         </p>
 
         {showScrollIndicator && (
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="h-8 w-8 text-white" />
+            <ChevronDown className="h-8 w-8 text-text-light" />
           </div>
         )}
       </div>

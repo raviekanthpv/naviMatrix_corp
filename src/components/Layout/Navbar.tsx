@@ -141,10 +141,19 @@ export default function Navbar() {
     // === BIG LAYOUT ===
     if (layout === "bigLayout") {
       return (
-        <div className="fixed left-0 right-0 z-[45] mt-0 animate-slideDown overflow-hidden top-[64px]">
-          <div className="w-screen bg-gradient-to-b from-black/90 via-black/95 to-black backdrop-blur-xl border-t border-white/10 shadow-[0_40px_120px_-20px_rgba(255,255,255,0.25)]">
+        <div
+          className="fixed left-0 right-0 z-[45] mt-0 animate-slideDown 
+                    overflow-hidden top-[64px]"
+        >
+          <div
+            className="w-screen backdrop-blur-xl border-t border-white/10 
+                      bg-gradient-to-b from-black/90 via-black/95 to-black 
+                      shadow-[0_40px_120px_-20px_rgba(255,255,255,0.25)]"
+          >
             <div
-              className="w-full px-[5vw] py-14 flex justify-center gap-10 overflow-x-auto scroll-smooth snap-x snap-mandatory border-y border-white/20"
+              className="w-full px-[5vw] py-14 flex justify-center gap-10 
+                         overflow-x-auto scroll-smooth snap-x snap-mandatory 
+                         border-y border-white/20"
               style={{ minHeight: "520px" }}
             >
               {items.map((s) => (
@@ -155,25 +164,48 @@ export default function Navbar() {
                     else if (s.href) handleSmoothScroll(s.href);
                     setActiveMenu(null);
                   }}
-                  className="group relative overflow-hidden rounded-3xl ring-1 ring-white/20 hover:ring-white/60 transition shrink-0 w-[500px] h-[480px] border border-white/15 hover:border-white/40"
+                  className="group relative overflow-hidden rounded-3xl ring-1 
+                             ring-white/20 hover:ring-white/60 transition 
+                             shrink-0 w-[500px] h-[480px] border border-white/15 
+                             hover:border-white/40"
                 >
                   <div className="relative w-full h-full">
                     <div
-                      className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 bg-cover bg-center 
+                                 group-hover:scale-105 transition-transform 
+                                 duration-500"
                       style={{ backgroundImage: `url(${s.image})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/90" />
-                    <div className="relative z-10 h-full w-full p-8 flex flex-col justify-end">
-                      <div className="flex items-center gap-2 text-white/90 group-hover:text-white transition">
+                    <div
+                      className="absolute 
+                                 bg-gradient-to-b from-black/10 via-black/55 to-black/90"
+                    />
+                    <div
+                      className="relative z-10 h-full w-full p-8 flex flex-col 
+                                 justify-end"
+                    >
+                      <div
+                        className="flex items-center gap-2 text-text-light/90 
+                                   group-hover:text-white transition"
+                      >
                         {s.icon}
                         <span className="text-lg font-semibold">{s.title}</span>
                       </div>
-                      <p className="mt-2 text-[15px] leading-snug text-white/80 text-justify">
+                      <p
+                        className="mt-2 text-[15px] leading-snug text-white/80 
+                                   text-justify"
+                      >
                         {s.desc}
                       </p>
-                      <div className="mt-4 text-sm text-white/90 group-hover:text-white flex items-center">
+                      <div
+                        className="mt-4 text-sm text-white/90 
+                                   group-hover:text-white flex items-center"
+                      >
                         Explore
-                        <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight
+                          className="ml-1 h-4 w-4 group-hover:translate-x-1 
+                                     transition-transform"
+                        />
                       </div>
                     </div>
                   </div>
@@ -187,7 +219,11 @@ export default function Navbar() {
 
     // === SMALL LAYOUT (Centered) ===
     return (
-      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[45] w-56 rounded-xl bg-black/95 border border-white/15 backdrop-blur-md shadow-lg py-3 flex flex-col text-sm animate-slideDown">
+      <div
+        className="absolute left-1/2 -translate-x-1/2 top-full mt-3 z-[45] w-56 
+                   rounded-xl bg-black/95 border border-white/15 backdrop-blur-md 
+                   shadow-lg py-3 flex flex-col text-sm animate-slideDown"
+      >
         {items.map((link) => (
           <Link
             key={link.title}
@@ -199,7 +235,8 @@ export default function Navbar() {
               }
               setActiveMenu(null);
             }}
-            className="px-5 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+            className="px-5 py-2 text-white/80 hover:text-white hover:bg-white/10 
+                       transition-colors flex items-center gap-2"
           >
             {link.icon && <span>{link.icon}</span>}
             {link.title}
@@ -213,9 +250,9 @@ export default function Navbar() {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/90 backdrop-blur-sm shadow-[0_10px_30px_-10px_rgba(255,255,255,0.15)]"
-          : "bg-black/90"
-      } text-white border-b border-white/30`}
+          ? "bg-section-dark/90 backdrop-blur-sm shadow-[0_10px_30px_-10px_rgba(255,255,255,0.15)]"
+          : "bg-section-dark/90"
+      } text-text-light border-b border-text-light/30`}
     >
       <div
         ref={barRef}
@@ -229,7 +266,7 @@ export default function Navbar() {
               className="flex items-center space-x-2 group hover:scale-[1.02] transition"
               onClick={() => setActiveMenu(null)}
             >
-              <Plane className="h-8 w-8 text-white" />
+              <Plane className="h-8 w-8 text-red-500" />
               <span className="text-3xl font-bold tracking-wide">Naavi</span>
             </Link>
           </div>
@@ -247,17 +284,15 @@ export default function Navbar() {
                     }
                     className={`flex text-2xl items-center gap-1 font-medium transition-all duration-200 ${
                       activeMenu === item.hasSub
-                        ? "text-white scale-110 font-bold"
-                        : "text-white/80 hover:text-white"
+                        ? "text-text-light scale-110 font-bold"
+                        : "text-text-light/80 hover:text-text-light"
                     }`}
                   >
                     {item.name}
                     {item.hasSub && (
                       <ArrowRight
                         className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                          activeMenu === item.hasSub
-                            ? "rotate-90 "
-                            : ""
+                          activeMenu === item.hasSub ? "rotate-90 " : ""
                         }`}
                       />
                     )}
@@ -285,8 +320,8 @@ export default function Navbar() {
                 }
                 className={`flex text-2xl items-center gap-1 font-medium transition-all duration-200 ${
                   activeMenu === "company"
-                    ? "text-white scale-110 font-bold"
-                    : "text-white/80 hover:text-white"
+                    ? "text-text-light scale-110 font-bold"
+                    : "text-text-light/80 hover:text-text-light"
                 }`}
               >
                 Company
@@ -309,14 +344,14 @@ export default function Navbar() {
                 }
                 className={`p-2 text-2xl rounded-full transition flex items-center gap-2 ${
                   activeMenu === "apps"
-                    ? "bg-white/10 ring-1 scale-110 text-white"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "bg-text-text-light/10 ring-1 scale-110 text-text-light"
+                    : "text-text-light/80 hover:text-text-light hover:bg-text-light/10"
                 }`}
               >
                 <Grid className="h-6 w-6" />
                 <ArrowRight
                   className={`h-4 w-4 transform transition-transform duration-200 ${
-                    activeMenu === "apps" ? "rotate-90 text-sky-400" : ""
+                    activeMenu === "apps" ? "rotate-90 text-text-light" : ""
                   }`}
                 />
               </button>
@@ -338,7 +373,7 @@ export default function Navbar() {
             setOpenSub(null);
           }}
         >
-          <Plane className="h-7 w-7 text-white" />
+          <Plane className="h-7 w-7 text-text-light" />
           <span className="text-xl font-bold">Naavi</span>
         </Link>
 
@@ -385,7 +420,11 @@ export default function Navbar() {
 
       {/* === MOBILE DROPDOWN === */}
       {activeMenu === "mobile" && (
-        <div className="md:hidden flex flex-col bg-black/95 border-t border-white/10 py-4 px-6 space-y-3">
+        <div
+          className="md:hidden flex flex-col 
+                     bg-black/95 border-t border-white/10 
+                     py-4 px-6 space-y-3"
+        >
           {[
             ...navItems,
             { name: "Company", hasSub: "company" },
@@ -397,7 +436,8 @@ export default function Navbar() {
                 onClick={() =>
                   setOpenSub(openSub === item.name ? null : item.name)
                 }
-                className="flex justify-between items-center py-2 text-white/90 hover:text-sky-400"
+                className="flex justify-between items-center py-2 
+                           text-text-light/90 hover:text-sky-400"
               >
                 <span>{item.name}</span>
                 {item.hasSub && (
@@ -413,7 +453,10 @@ export default function Navbar() {
               {item.hasSub &&
                 subMenus[item.hasSub] &&
                 openSub === item.name && (
-                  <div className="pl-4 border-l border-white/10 flex flex-col space-y-2 mt-1">
+                  <div
+                    className="pl-4 border-l border-white/10 flex flex-col space-y-2 
+                               mt-1"
+                  >
                     {subMenus[item.hasSub].items.map((sub) => (
                       <button
                         key={sub.title}
@@ -423,7 +466,8 @@ export default function Navbar() {
                           setActiveMenu(null);
                           setOpenSub(null);
                         }}
-                        className="text-left text-white/70 hover:text-sky-400 text-sm py-1 flex items-center gap-2"
+                        className="text-left text-text-light/70 hover:text-red-400 
+                                   text-sm py-1 flex items-center gap-2"
                       >
                         {sub.icon}
                         {sub.title}

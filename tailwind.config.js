@@ -3,8 +3,8 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: [
     {
-      pattern: /(w|h|p|m)-\[.*\]/ 
-    }
+      pattern: /(w|h|p|m)-\[.*\]/,
+    },
   ],
   theme: {
     extend: {
@@ -14,10 +14,13 @@ export default {
           dark: "#000000",
         },
         text: {
-          light: "#000000",
-          dark: "#ffffff",
+          dark: "#000000",
+          light: "rgb(212 211 203 / <alpha-value>)"
         },
-        "white-smoke": "#f5f5f5",
+        section: {
+          light: "rgb(212 211 203 / <alpha-value>)",
+          dark: "rgb(10 10 10 / <alpha-value>)",
+        },
         "carbon-black": "#0a0a0a",
       },
     },

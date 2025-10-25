@@ -5,11 +5,12 @@ export default function HeroIntro() {
   return (
     <section
       id="intro"
-      className="relative flex flex-col justify-center items-center min-h-screen w-full overflow-hidden text-white bg-gradient-to-b from-black via-gray-900 to-black blockBreakerBottomBorder"
+      className="relative flex flex-col justify-center items-center min-h-screen w-full overflow-hidden 
+                 text-text-light bg-gradient-to-b from-section-dark via-gray-900 to-section-dark blockBreakerBottomBorder"
     >
       {/* Glowing pulse background */}
       <motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.15)_0%,transparent_70%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.15)_0%,transparent_70%)]"
         animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -25,6 +26,7 @@ export default function HeroIntro() {
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
           Next-Gen Autonomy Platform
         </h1>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +34,7 @@ export default function HeroIntro() {
           className="mt-4 text-2xl md:text-3xl text-gray-300 font-medium"
         >
           Empowering the{" "}
-          <span className="bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-red-700 via-red-500 to-rose-400 bg-clip-text text-transparent font-semibold">
             Autonomous Precision
           </span>
         </motion.p>
@@ -53,7 +55,7 @@ export default function HeroIntro() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1, repeat: Infinity }}
         >
-          <ChevronDown className="w-8 h-8 text-sky-400" />
+          <ChevronDown className="w-8 h-8 text-red-500" />
         </motion.div>
       </motion.div>
     </section>
