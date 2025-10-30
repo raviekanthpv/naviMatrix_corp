@@ -4,32 +4,29 @@ import HeroIntro from "./HeroIntro";
 import MatrixProductIntro from "./MatrixProductIntro";
 import FalconIntro from "./FalconBlock/FalconIntro";
 import NewsSection from "./NewsSection";
+import MatrixSAIntro from "./MatrixSAIntro";
+import NavAIIntro from "./NavAIIntro";
 
 export default function HomePage() {
   return (
-    <div id="home">
-      <section className="bg-section-dark text-text-light">
+    <div id="home" className="overflow-x-hidden">
         <VideoSection
           title="Next-Gen Drone Technology"
           subtitle="Pioneering autonomous flight systems for military, industrial, and global applications with cutting-edge AI and precision engineering"
           videoUrl=""
         />
-      </section>
-      <section className="bg-section-light text-text-dark">
         <Mission />
-      </section>
-      <section className="bg-section-dark text-text-light">
         <HeroIntro />
-      </section>
-      <section className="bg-section-light text-text-dark">
         <MatrixProductIntro />
-      </section>
-      <section className="bg-section-light text-text-dark">
+     
+        <MatrixSAIntro />
+        
+
+        <NavAIIntro />
+      
         <FalconIntro />
-      </section>
-      <section className="bg-section-dark text-text-light">
-        <NewsSection />
-      </section>
+      
+        {/* <NewsSection /> */}
     </div>
   );
 }

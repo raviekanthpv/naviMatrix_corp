@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import falconImg from "../../Assets/falcon.jpg";
+import falconImg from "../../Assets/falcon.png";
 import VideoSection from "../VideoSection";
 
 export default function FalconPage() {

@@ -5,6 +5,11 @@ export default {
     {
       pattern: /(w|h|p|m)-\[.*\]/,
     },
+    'translate-y-0',
+    '-translate-y-full',
+    'opacity-0',
+    'opacity-100',
+    'transform'
   ],
   theme: {
     extend: {
@@ -15,7 +20,7 @@ export default {
         },
         text: {
           dark: "#000000",
-          light: "rgb(212 211 203 / <alpha-value>)"
+          light: "rgb(212 211 203 / <alpha-value>)",
         },
         section: {
           light: "rgb(212 211 203 / <alpha-value>)",
@@ -23,6 +28,11 @@ export default {
         },
         "carbon-black": "#0a0a0a",
       },
+    },
+    fontFamily: {
+      sans: ["var(--font-inter)", "sans-serif"],
+      orbitron: ["var(--font-orbitron)", "sans-serif"],
+      spaceGrotesk: ["var(--font-space-grotesk)", "sans-serif"],
     },
   },
   plugins: [

@@ -5,7 +5,7 @@ export default function HeroIntro() {
   return (
     <section
       id="intro"
-      className="relative flex flex-col justify-center items-center min-h-screen w-full overflow-hidden 
+      className="relative flex flex-col justify-center items-center h-[100dvh] w-full overflow-hidden 
                  text-text-light bg-gradient-to-b from-section-dark via-gray-900 to-section-dark blockBreakerBottomBorder"
     >
       {/* Glowing pulse background */}

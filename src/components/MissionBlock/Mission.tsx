@@ -1,71 +1,48 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import missionImage from "../../Assets/mission.png";
-import MissionHeading from "./MissionHeading";
-import { motion } from "framer-motion";
-
 export default function Mission() {
   return (
     <section
-      id="mission-block"
-      className="relative flex flex-col md:flex-row items-center justify-between 
-                 min-h-screen w-full bg-section-light text-text-dark overflow-hidden"
+      className="fullscreen-light justify-between px-[8%]"
     >
-      {/* === Left: Text content === */}
-      <div
-        className="relative z-10 w-full md:w-1/2 px-6 md:px-16 
-                   flex flex-col items-center md:items-start text-center md:text-left space-y-8"
-      >
-        {/* --- Section Label --- */}
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center md:justify-start gap-3 mb-6"
+      {/* Divider */}
+      {/* <div className="absolute left-1/2 top-[10%] bottom-[10%] w-px bg-neutral-300/40"></div> */}
+
+      {/* Left Side */}
+      <div className="flex-1 space-y-6 relative z-10">
+        <h2 className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+          Our Mission
+        </h2>
+        <h1 className="text-7xl font-extrabold leading-tight">
+          Protecting Tomorrow
+          <br />
+          <span>
+            with Intelligence & Autonomy.
+          </span>
+        </h1>
+      </div>
+
+      {/* Right Side */}
+      <div className="flex-1 text-right max-w-md relative z-10">
+        <p className="text-xl leading-relaxed mb-8">
+          At Naavi Aerospace & Technologies, intelligence and autonomy define
+          every mission we undertake. We build systems that think, act, and
+          evolve — safeguarding the future through precision, purpose, and trust.
+        </p>
+
+        <a
+          href="/mission"
+          className="inline-flex items-center gap-3 text-lg font-semibold group relative text-neutral-900"
         >
-          <motion.span
-            initial={{ width: 0 }}
-            whileInView={{ width: "2rem" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="h-[2px] bg-red-600/80 rounded"
-          ></motion.span>
-          <p className="uppercase tracking-[0.25em] text-base md:text-lg font-semibold text-text-dark/70">
-            Our Mission
-          </p>
-        </motion.div>
-
-        {/* --- Animated Heading --- */}
-        <MissionHeading />
-
-        {/* --- CTA Button + Subtext --- */}
-        <div className="mt-10">
-          <Link
-            to="/mission"
-            className="group inline-flex items-center gap-2 px-8 py-3 
-              rounded-full hover:scale-110
-              font-semibold text-2xl transition-all duration-300 
-              shadow-lg underline decoration-2 underline-offset-4 border border-section-dark"
-          >
-            Learn More About Our Mission
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
-          </Link>
-
-          <p className="mt- text-center text-sm md:text-base text-text-dark/80">
-            Includes <span className="font-medium">Mission</span> and{" "}
-            <span className="font-medium">Team</span> insights.
-          </p>
-        </div>
+          <span className="relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-neutral-900 after:transition-all after:duration-300 group-hover:after:w-full">
+            Explore Mission & Vision
+          </span>
+          <span className="inline-block transition-transform group-hover:translate-x-2 duration-300">
+            →
+          </span>
+        </a>
       </div>
 
-      {/* === Right: Full Image === */}
-      <div className="relative w-full md:w-1/2 h-[50vh] md:h-screen">
-        <img
-          src={missionImage}
-          alt="Mission illustration"
-          className="absolute inset-0 w-full h-full object-cover object-center md:rounded-l-2xl"
-        />
-      </div>
+      {/* Ambient Highlight */}
+      <div className="absolute right-[10%] top-[45%] w-[260px] h-[260px] bg-gradient-to-b from-amber-100/50 to-transparent rounded-full blur-3xl opacity-60"></div>
     </section>
   );
 }
