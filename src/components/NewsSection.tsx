@@ -27,10 +27,7 @@ export default function NewsSection() {
   ];
 
   return (
-    <section
-      id="news"
-      className="relative w-full py-24"
-    >
+    <section id="news" className="relative w-full py-24">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         <motion.div
           initial={{ opacity: 0, y: 60 }}

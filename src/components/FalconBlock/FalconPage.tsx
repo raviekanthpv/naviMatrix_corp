@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import falconImg from "../../Assets/falcon.png";
 import VideoSection from "../VideoSection";
+import FalconSection from "./FalconSection";
 
 export default function FalconPage() {
   return (
@@ -15,62 +16,7 @@ export default function FalconPage() {
       </section>
 
       {/* === ABOUT FALCON === */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between py-24 px-8 md:px-16 bg-section-light text-text-dark">
-        {/* LEFT: IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="md:w-1/2"
-        >
-          <img
-            src={falconImg}
-            alt="Falcon Drone"
-            className="rounded-2xl shadow-[0_0_50px_rgba(255,0,0,0.1)] border border-gray-400"
-          />
-        </motion.div>
-
-        {/* RIGHT: DESCRIPTION */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="md:w-1/2 md:pl-12 mt-10 md:mt-0"
-        >
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-red-600">
-            Falcon
-          </h2>
-          <p className="text-lg md:text-xl leading-relaxed mb-6 text-text-dark/90">
-            Falcon is a high-speed interceptor drone that, using external radar
-            and an onboard optical camera, rapidly detects, tracks, and
-            eliminates hostile or unauthorized aerial targets—like rogue
-            drones—within seconds.
-          </p>
-          <p className="text-lg md:text-xl leading-relaxed mb-8 text-text-dark/90">
-            Built for ground-based air defense, Falcon can rapidly launch,
-            identify, intercept, and destroy a wide variety of aerial threats at
-            a fraction of the cost of conventional methods. It operates under
-            all weather conditions and can be safely recovered and relaunched
-            with zero additional cost.
-          </p>
-
-          {/* Bullet Features */}
-          <ul className="space-y-3 text-base md:text-lg text-text-dark/90">
-            <li>🚀 <b>High-Speed Interception:</b> Cruise speeds of 150–200 km/h</li>
-            <li>🎯 <b>Autonomous Target Tracking & Engagement</b></li>
-            <li>🕶 <b>Stealth-Optimized Design:</b> Compact 3.0 kg frame</li>
-            <li>🤖 <b>AI-Driven Precision Guidance:</b> Powered by MatriX OS SUIT</li>
-            <li>⚙️ <b>Rapid Deployment & Recovery:</b> Launch-ready in seconds</li>
-            <li>🛫 <b>Endurance & Range:</b> 10 minutes of high-intensity endurance</li>
-            <li>🔗 <b>Multi-Platform Integration</b></li>
-            <li>🧠 <b>Autonomous Swarm Capability</b></li>
-            <li>🧩 <b>Modular Architecture</b></li>
-            <li>🏔 <b>Optimized Altitude & Payload Capacity</b></li>
-          </ul>
-        </motion.div>
-      </section>
+      <FalconSection falconImg={falconImg} />
 
       {/* === FALCON NEST === */}
       <section className="relative py-24 px-8 md:px-16 bg-gradient-to-b from-[#111] to-[#1b1b1b] text-white">

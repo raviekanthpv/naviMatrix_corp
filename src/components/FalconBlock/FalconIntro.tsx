@@ -29,7 +29,7 @@ export default function FalconIntro() {
       {/* === Text Block === */}
       <div className="relative z-10 max-w-4xl pl-[8%] pr-6">
         {/* Label */}
-        <h3 className="mb-6 text-lg md:text-3xl font-semibold tracking-wider mb-2">
+        <h3 className="mb-6 text-sm tracking-[0.3em] font-semibold mb-2">
           Falcon
         </h3>
 
@@ -41,8 +41,8 @@ export default function FalconIntro() {
         {/* Description */}
         <p className="text-lg md:text-xl mb-10 max-w-2xl leading-relaxed">
           Uses external radar and an onboard optical camera to rapidly detect,
-          track, and eliminate hostile or unauthorized aerial targets — like rogue
-          drones — within seconds.
+          track, and eliminate hostile or unauthorized aerial targets — like
+          rogue drones — within seconds.
         </p>
 
         {/* === Unified CTA (Mission-style link) === */}

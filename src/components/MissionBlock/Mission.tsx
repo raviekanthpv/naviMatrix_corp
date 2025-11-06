@@ -1,8 +1,6 @@
 export default function Mission() {
   return (
-    <section
-      className="fullscreen-light justify-between px-[8%]"
-    >
+    <section className="fullscreen-light justify-between px-[8%]" id="Mission">
       {/* Divider */}
       {/* <div className="absolute left-1/2 top-[10%] bottom-[10%] w-px bg-neutral-300/40"></div> */}
 
@@ -14,9 +12,7 @@ export default function Mission() {
         <h1 className="text-7xl font-extrabold leading-tight">
           Protecting Tomorrow
           <br />
-          <span>
-            with Intelligence & Autonomy.
-          </span>
+          <span>with Intelligence & Autonomy.</span>
         </h1>
       </div>
 
@@ -25,7 +21,7 @@ export default function Mission() {
         <p className="text-xl leading-relaxed mb-8">
           At Naavi Aerospace & Technologies, intelligence and autonomy define
           every mission we undertake. We build systems that think, act, and
-          evolve — safeguarding the future through precision, purpose, and trust.
+          evolve.
         </p>
 
         <a

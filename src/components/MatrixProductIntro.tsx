@@ -32,8 +32,8 @@ export default function MatrixProductIntro() {
       {/* === Text Content === */}
       <div className="relative z-10 max-w-4xl pl-[8%]">
         {/* Label */}
-        <h3 className="text-3xl mb-6 font-semibold tracking-wider">
-          Matri<span className="text-cyan-400">X</span>
+        <h3 className="text-sm mb-6 font-semibold tracking-[0.3em]">
+          Matri<span className="text-white-400">X</span>
         </h3>
 
         {/* Headline */}
@@ -41,11 +41,17 @@ export default function MatrixProductIntro() {
           The Intelligence Core
         </h1>
 
+        <div className="mt-4 text-sm tracking-wider uppercase text-white/70">
+          Perceive • Decide • Act
+        </div>
+
         {/* Description */}
-        <p className="mt-6 text-lg leading-relaxed max-w-2xl">
-          An AI-driven operating system that empowers autonomous platforms to
-          perceive, decide, and act intelligently across air, land, sea, and
-          space.
+        <p className="mt-3 text-lg leading-relaxed max-w-2xl">
+          An AI-driven operating system that{" "}
+          <span className="font-semibold">perceives</span> the environment,
+          <span className="font-semibold"> decides</span> in real time, and
+          <span className="font-semibold"> acts</span> with precision across
+          air, land, sea, and space.
         </p>
 
         {/* === Unified Mission-style CTA === */}
@@ -55,10 +61,10 @@ export default function MatrixProductIntro() {
             className="inline-flex items-center gap-3 text-lg font-semibold group relative"
           >
             {/* Underline on hover */}
-            <span className="relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cyan-400 after:transition-all after:duration-300 group-hover:after:w-full">
+            <span className="relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-section-light after:transition-all after:duration-300 group-hover:after:w-full">
               Explore Matrix OS
             </span>
-            <span className="inline-block transition-transform group-hover:translate-x-2 duration-300 text-cyan-400">
+            <span className="inline-block transition-transform group-hover:translate-x-2 duration-300 text-text-light">
               →
             </span>
           </a>

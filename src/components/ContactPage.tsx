@@ -1,26 +1,30 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    organization: '',
-    subject: '',
-    message: '',
-    inquiryType: 'general'
+    name: "",
+    email: "",
+    organization: "",
+    subject: "",
+    message: "",
+    inquiryType: "general",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    console.log("Contact form submitted:", formData);
     // Handle form submission logic here
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -29,7 +33,7 @@ export default function ContactPage() {
       city: "New Delhi",
       address: "IIT Indore",
       phone: "080442175467",
-      email: "navanit@navimatrix.com"
+      email: "navanit@navimatrix.com",
     },
     // {
     //   city: "London",
@@ -50,12 +54,11 @@ export default function ContactPage() {
       {/* Header */}
       <div className="bg-slate-900 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Get In Touch
-          </h1>
+          <h1 className="text-5xl font-bold text-white mb-6">Get In Touch</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to explore how our drone solutions can transform your operations? 
-            Our team of experts is here to help you find the perfect solution.
+            Ready to explore how our drone solutions can transform your
+            operations? Our team of experts is here to help you find the perfect
+            solution.
           </p>
         </div>
       </div>
@@ -66,7 +69,9 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Send Us a Message
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -171,7 +176,9 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <div className="bg-white p-8 rounded-2xl shadow-lg mb-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  Contact Information
+                </h3>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <Phone className="h-6 w-6 text-sky-500 mt-1" />
@@ -190,9 +197,12 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-4">
                     <Clock className="h-6 w-6 text-sky-500 mt-1" />
                     <div>
-                      <div className="font-semibold text-slate-900">Business Hours</div>
+                      <div className="font-semibold text-slate-900">
+                        Business Hours
+                      </div>
                       <div className="text-gray-600">
-                        Mon - Fri: 9:00 AM - 6:00 PM PST<br />
+                        Mon - Fri: 9:00 AM - 6:00 PM PST
+                        <br />
                         24/7 Support Available
                       </div>
                     </div>
@@ -202,11 +212,15 @@ export default function ContactPage() {
 
               {/* Office Locations */}
               <div className="bg-white p-8 rounded-2xl shadow-lg">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Office</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  Office
+                </h3>
                 <div className="space-y-6">
                   {offices.map((office, index) => (
                     <div key={index} className="border-l-4 border-sky-500 pl-6">
-                      <h4 className="font-bold text-slate-900 text-lg mb-2">{office.city}</h4>
+                      <h4 className="font-bold text-slate-900 text-lg mb-2">
+                        {office.city}
+                      </h4>
                       <div className="space-y-2 text-gray-600">
                         <div className="flex items-start space-x-2">
                           <MapPin className="h-4 w-4 text-sky-500 mt-1 flex-shrink-0" />

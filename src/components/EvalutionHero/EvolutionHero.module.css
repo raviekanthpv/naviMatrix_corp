@@ -1,0 +1,75 @@
+/* EvolutionHero.module.css */
+
+.root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #000 70%, #050505);
+  display: block; /* let the absolute container center itself */
+  overflow: hidden;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.neural {
+  position: absolute;
+  inset: 0;
+}
+
+/* Center the text overlay exactly at the section center */
+.container {
+  position: absolute;
+  inset: 0; /* full overlay */
+  z-index: 2;
+  display: flex; /* perfect centering */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* clicks pass through if needed */
+  padding: 0 1rem;
+}
+
+/* EvolutionHero.module.css */
+
+.text {
+  text-align: center;
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  line-height: 1.2;
+  white-space: pre-wrap;
+  margin-bottom: 0.5rem; /* puts it just above the subtitle */
+}
+
+/* ✅ Safari fix: make each letter a box so transforms render */
+.text span {
+  display: inline-block; /* crucial for Framer Motion + Safari */
+  will-change: transform, opacity;
+}
+
+.glow {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 40px rgba(0, 255, 255, 0.6);
+  animation: eh-pulse 3s infinite alternate;
+}
+
+@keyframes eh-pulse {
+  0% {
+    text-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff;
+  }
+  100% {
+    text-shadow:
+      0 0 20px #0ff,
+      0 0 40px #0ff;
+  }
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  opacity: 0.7;
+  letter-spacing: 3px;
+  text-align: center;
+}

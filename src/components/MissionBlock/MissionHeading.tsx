@@ -33,14 +33,14 @@ export default function MissionHeading() {
             i === 0
               ? "block text-6xl md:text-7xl text-text-dark/95"
               : i === 1
-              ? `relative inline-block mt-3
+                ? `relative inline-block mt-3
                  font-extrabold
                  text-red-600
                  bg-gradient-to-r from-red-800 via-red-600 to-rose-500
                  bg-clip-text text-transparent
                  [text-shadow:0_2px_3px_rgba(0,0,0,0.25)]
                  before:absolute before:inset-0 before:text-red-800/25 before:blur-[1.5px] before:content-[attr(data-text)]`
-              : "block mt-2 text-text-dark/80"
+                : "block mt-2 text-text-dark/80"
           }
           data-text={line}
         >
